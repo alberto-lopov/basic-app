@@ -1,0 +1,61 @@
+/* The Modal (background) */
+.shadowBackground{
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Frontground Modal*/
+.displayerInfoPokemon{
+  background-color: white;
+  border-radius: 25px;
+  border: 2px solid black;
+  padding: 1%;
+  width: 66%;
+  max-height: 99%;
+}
+
+/*Close button in the modal*/
+.rowCloseButton{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.closeInfoPokemon{
+  border-radius: 50%; /*Circle*/
+  border: 2px solid black;
+  width: min-content;
+  height: min-content;
+  background-color: white;
+}
+
+.closeInfoPokemon:hover{
+  color: white;
+  background-color: black;
+}
+
+/*Row of sprites and types*/
+.rowSprites, .rowTypes{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.rowSprites{
+  padding: 0 0 1%;
+}
+
+/*Entry pokedex row*/
+.entryText{
+  font-size: large;
+  font-style: italic;
+}
+

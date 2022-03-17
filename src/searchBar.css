@@ -1,0 +1,31 @@
+.searchBarContainer{
+    background-color: white;
+    border-radius: 25px;
+    border: 3px solid grey;
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    height: 0.5%;
+    align-items: center;
+}
+
+.imgSearchBar{
+    max-width: 7%;
+}
+
+.searchInput{
+    max-width: 60%;
+    border: none;
+    outline: none;
+}
+
+.crossClearInput{
+    color: gray;
+    background-color: white;
+    border: none;
+    justify-self: flex-end;
+}
+
+.crossClearInput:hover{
+    color: rgb(65, 63, 63);
+}

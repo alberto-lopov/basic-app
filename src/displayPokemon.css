@@ -1,0 +1,117 @@
+figure{
+    padding-top: 12px;
+    margin-bottom: 10px;
+}
+
+.spritesPokemon{
+    width: 100%;
+    border-radius: 10px;
+    background-color: rgb(220, 224, 230);
+}
+
+figcaption{
+    text-align: left;
+    color: grey;
+    font-size: 20px;
+}
+
+.displayer{
+    border-radius: 25px;
+    border: 2px solid black;
+    margin: 5%;
+}
+
+.displayer:hover{
+    box-shadow: 0px 0px 5px 5px lightblue;
+    cursor: pointer;
+}
+
+.nombrePokemon{
+    text-align: center;
+    margin: 0px;
+    padding: 0px 12px 12px;
+    font-size: 25px;
+}
+
+.tipo{
+    border-radius: 50px;
+    border: 2px solid black;
+    font-weight: 500;
+}
+
+.grass{
+    background-image: linear-gradient(to bottom right, green, lightgreen, white);
+}
+
+.fire{
+    background-image: linear-gradient(to bottom right, red, orange, white);
+}
+
+.water{
+    background-image: linear-gradient(to bottom right, blue, rgb(101, 101, 245), white);
+    color: white;
+}
+
+.rock{
+    background-image: linear-gradient(to bottom right, rgb(177, 117, 6), rgb(182, 133, 41), white);
+}
+
+.ground {
+    background-image: linear-gradient(to bottom right, rgb(207, 137, 6), rgb(224, 159, 38), white);
+}
+
+.normal{
+    background-image: linear-gradient(to bottom right, #A8A878, lightgrey, white);
+}
+
+.bug{
+    background-image: linear-gradient(to bottom right, #71c538, #93C572, white);
+}
+
+.fairy{
+    background-image: linear-gradient(to bottom right, lightsalmon, lightpink,  white);
+}
+
+.flying{
+    background-image: linear-gradient(to bottom right, rgb(110, 195, 248), rgb(173, 220, 250), white);
+}
+
+.poison{
+    background-image: linear-gradient(to bottom right, darkviolet, violet, white);
+}
+
+.electric{
+    background-image: linear-gradient(to bottom right, orange, yellow, white);
+}
+
+.fighting{
+    background-image: linear-gradient(to bottom right, #bd544f, #db443c, white);
+    color: white;
+}
+
+.ice{
+    background-image: linear-gradient(to bottom right, #27dfdf, #21cce2, white); 
+}
+
+.steel{
+    background-image: linear-gradient(to bottom right, #5e5553, #adb9bb, white); 
+}
+
+.psychic{
+    background-image: linear-gradient(to bottom right,  #f54479, #fd88ab, white);
+}
+
+.ghost{
+    background-image: linear-gradient(to bottom right,  #62089e, #8d18db, white);
+    color: white;
+}
+
+.dragon{
+    background-image: linear-gradient(to bottom right,  #850769, #9c0a7d, white);
+    color: white;
+}
+
+.dark{
+    background-image: linear-gradient(to bottom right,  #312b30, #3a3539, white);
+    color: white;
+}

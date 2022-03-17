@@ -1,0 +1,11 @@
+.pageBar{
+    justify-self: flex-end;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+li{
+    list-style: none;
+    padding: 3px;
+}
