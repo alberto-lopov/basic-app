@@ -1,7 +1,7 @@
 # Intro
-This project is a basic app made with react and redux mainly. The purpose of this project is to learn this tools.
-Currently the app fecth pokemons (1ºGen-4ºGen) from [PokeApi](https://pokeapi.co/)
-It displays the info fetched with a Grid layout made with BootStrap.
+This project is a basic app made with react and redux mainly. The purpose of this project is to learn this tools.\
+Currently the app fecth pokemons (1ºGen-4ºGen) from [PokeApi](https://pokeapi.co/).\
+It displays the info fetched with a Grid layout made with BootStrap.\
 Also it implements some functionalites like being able to search pokemons by name with the search bar,
 or display even more info about a pokemon with a modal component activated when you click on one pokemon and
 at last a nav page bar.
