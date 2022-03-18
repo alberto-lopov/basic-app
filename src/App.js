@@ -1,5 +1,4 @@
 import "./App.css";
-import { nPokemonToFecth} from "./globalVar";
 import { GridPokemon } from './GridPokemon';
 import { PageBar } from "./PageBar";
 import { SearchBar } from "./SearchBar";
@@ -12,7 +11,7 @@ function App() {
           <PageBar />
         </header>
         <main className="App-main">
-          <GridPokemon limit={nPokemonToFecth}/>
+          <GridPokemon/>
         </main>
       </div>
   );

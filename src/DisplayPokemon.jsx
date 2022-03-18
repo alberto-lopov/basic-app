@@ -12,13 +12,13 @@ export const DisplayPokemon = (props) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        const pillarDatos = async () =>{
-            const respuesta = await fetch(props.apiUrl);
-            const poke = await respuesta.json();
+        const fecthData = async () =>{
+            const response = await fetch(props.apiUrl);
+            const poke = await response.json();
             setPokemon(poke);
         }   
     
-        pillarDatos();
+        fecthData();
       },[props.apiUrl]);
     
     //Event Handler
@@ -40,12 +40,12 @@ export const DisplayPokemon = (props) => {
                     </figure>
                 </Row>
                 <Row>
-                    <p className="nombrePokemon"><strong>{pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}</strong></p>
+                    <p className="namePokemon"><strong>{pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}</strong></p>
                 </Row>
                 <Row>    
-                    {pokemon.types.map((tipo) =>{
+                    {pokemon.types.map((typeId) =>{
                         const tamCol = pokemon.types.length === 2 ? 6:12
-                        return( <Col key={`${pokemon.name}_tipo_${tipo.type.name}`} xs={tamCol}><p className={`tipo ${tipo.type.name}`}>{tipo.type.name[0].toUpperCase() + tipo.type.name.slice(1)}</p></Col>);
+                        return( <Col key={`${pokemon.name}_type_${typeId.type.name}`} xs={tamCol}><p className={`type ${typeId.type.name}`}>{typeId.type.name[0].toUpperCase() + typeId.type.name.slice(1)}</p></Col>);
                     })}
                 </Row>
                 </Col>
@@ -55,7 +55,7 @@ export const DisplayPokemon = (props) => {
     return(
         <div>
             <img src={loading} 
-                alt="Cargando pokemon" 
+                alt="Loading pokemon" 
             />
         </div>
     );

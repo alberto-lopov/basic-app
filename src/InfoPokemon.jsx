@@ -6,7 +6,7 @@ import { clearPickedPokemon, selectPickedPokemon } from "./infoPokemonSlice";
 import  './infoPokemon.css';
 import loading from './resources/loading.png'
 
-const regionPokedex = 11; //Diamond Version Pokedex
+const regionPokedex = 0; //Diamond Version Pokedex
 
 export const InfoPokemon = () => {
     const pickedPokemon = useSelector(selectPickedPokemon);
@@ -18,13 +18,13 @@ export const InfoPokemon = () => {
     };
 
     useEffect(() => {
-        const pillarDatos = async () =>{
-            const respuesta = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${pickedPokemon.id}/`);
-            const data = await respuesta.json();
+        const fecthData = async () =>{
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${pickedPokemon.id}/`);
+            const data = await response.json();
             setPokedexEntry(data);
         }   
     
-        pillarDatos();
+        fecthData();
       },[pickedPokemon]);
     
     if(pokedexEntry){
@@ -49,12 +49,12 @@ export const InfoPokemon = () => {
                         </Col>
                     </Row>
                     <Row className = "rowTypes">
-                        {pickedPokemon.types.map((tipo) =>{
+                        {pickedPokemon.types.map((typeId) =>{
                             const tamCol = pickedPokemon.types.length === 2 ? 4:6
-                            return( <Col key={`${pickedPokemon.name}_tipo_${tipo.type.name}`} xs={tamCol}><p className={`tipo ${tipo.type.name}`}>{tipo.type.name[0].toUpperCase() + tipo.type.name.slice(1)}</p></Col>);
+                            return( <Col key={`${pickedPokemon.name}_type_${typeId.type.name}`} xs={tamCol}><p className={`type ${typeId.type.name}`}>{typeId.type.name[0].toUpperCase() + typeId.type.name.slice(1)}</p></Col>);
                         })}
                     </Row>
-                    <Row><p className="entryText">"{pokedexEntry.flavor_text_entries[pokedexEntry].flavor_text}"</p></Row>
+                    <Row><p className="entryText">"{pokedexEntry.flavor_text_entries[regionPokedex].flavor_text}"</p></Row>
                     <Row>
                         <Col>
                             <Row><p><b>Base Stats</b></p></Row>

@@ -12,9 +12,10 @@ import { loadPokemons, selectAllPokemons, selectFilteredPokemons } from './gridP
 import { selectPickedPokemon } from './infoPokemonSlice';
 import { selectPageIndex } from './pageBarSlice';
 import { selectSearchText } from './searchBarSlice';
+import { nPokemonToFecth, offsetPokemon } from './globalVar';
 
 
-export const GridPokemon = (props) => {
+export const GridPokemon = () => {
     const listFiltered = useSelector(selectFilteredPokemons);
     const pickedPokemon = useSelector(selectPickedPokemon);
     const listAllPokemon = useSelector(selectAllPokemons);
@@ -22,17 +23,16 @@ export const GridPokemon = (props) => {
     const pageIndex = useSelector(selectPageIndex);
     const dispatch = useDispatch();
 
-    //const [listaCargada, setListaCargada] = useState();
     useEffect( () => {
-        const pillarDatos = async () =>{
-            const apiUrl = `https://pokeapi.co/api/v2/pokemon?limit=${props.limit}&offset=${props.offset}`
-            const respuesta = await fetch(apiUrl);
-            const lista = await respuesta.json();
-            dispatch(loadPokemons(lista.results));
+        const fecthData = async () =>{
+            const apiUrl = `https://pokeapi.co/api/v2/pokemon?limit=${nPokemonToFecth}&offset=${offsetPokemon}`
+            const response = await fetch(apiUrl);
+            const list = await response.json();
+            dispatch(loadPokemons(list.results));
         }   
     
-        pillarDatos();
-    }, [props.limit, props.offset, dispatch]);
+        fecthData();
+    }, [dispatch]);
 
     if(listAllPokemon){
         const listToShow = listAllPokemon.slice((pokemonPerPage*(pageIndex-1)), (pokemonPerPage*(pageIndex-1))+pokemonPerPage)
@@ -41,12 +41,12 @@ export const GridPokemon = (props) => {
                 {pickedPokemon && <InfoPokemon/>}
                 <Row>
                 {(searchText !== "") ?
-                    listFiltered.map((direccion, i) => { 
-                        return <Col key={direccion.name} className='showPokemon' xs={6} md={3} xl={2}><DisplayPokemon apiUrl={direccion.url}/></Col>
+                    listFiltered.map((address, i) => { 
+                        return <Col key={address.name} className='showPokemon' xs={6} md={3} xl={2}><DisplayPokemon apiUrl={address.url}/></Col>
                     })
                     :
-                    listToShow.map((direccion, i) => { 
-                        return <Col key={direccion.name} className='showPokemon' xs={6} md={3} xl={2}><DisplayPokemon apiUrl={direccion.url}/></Col>
+                    listToShow.map((address, i) => { 
+                        return <Col key={address.name} className='showPokemon' xs={6} md={3} xl={2}><DisplayPokemon apiUrl={address.url}/></Col>
                     })
                 }
                 </Row>
@@ -56,13 +56,7 @@ export const GridPokemon = (props) => {
     
     return (
         <Container>
-            <Row><img src={loading} alt="Cargando lista pokemon" /></Row>
+            <Row><img src={loading} alt="Loading list pokemon" /></Row>
         </Container>
     );
 }
-
-
-GridPokemon.defaultProps = {
-    limit: 6,
-    offset: 0
-};
